@@ -1,39 +1,51 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Caesar+Dressing&family=Contrail+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Righteous&family=Rubik+Mono+One&family=Six+Caps&family=Squada+One&family=Syncopate:wght@400;700&family=Vina+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+* {
     margin: 0;
     padding: 0;
     font-family: 'Poppings', sans-serif;
-    box-sizing: border-box;
+    box-sizing: border-box;    
+    overflow: hidden;
 }
 
-.container{
+.container {
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(135deg, #153677, #4e085f);
+    background: linear-gradient(135deg, #08245e, #340341);
     padding: 10px;
 }
 
-.todo-app{
+.todo-app {
     width: 100%;
     max-width: 540px;
-    background: #fff;
+    background-color: rgba(255, 255, 255, 0.048);
     margin: 100px auto 20px;
     padding: 40px 30px 70px;
     border-radius: 10px;
+    position: relative;
+    z-index: 100;
+
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
 }
 
-.todo-app h2{
-    color: #002765;
+.todo-app h2 {
+    color: white;
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.todo-app h2 img{
+.todo-app h2 img {
     width: 30px;
     margin-left: 10px;
 }
 
-.row{
+.row {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -43,7 +55,7 @@
     margin-bottom: 25px;
 }
 
-input{
+input {
     flex: 1;
     border: none;
     outline: none;
@@ -51,7 +63,7 @@ input{
     padding: 10px;
 }
 
-button{
+button {
     border: none;
     outline: none;
     padding: 16px 50px;
@@ -62,16 +74,17 @@ button{
     border-radius: 40px;
 }
 
-ul li{
+ul li {
     list-style: none;
     font-size: 17px;
     padding: 12px 8px 12px 50px;
     user-select: none;
     cursor: pointer;
     position: relative;
+    color: white;
 }
 
-ul li::before{
+ul li::before {
     content: '';
     position: absolute;
     height: 28px;
@@ -84,16 +97,16 @@ ul li::before{
     left: 8px;
 }
 
-ul li.checked{
+ul li.checked {
     color: #555;
     text-decoration: line-through;
 }
 
-ul li.checked::before{
+ul li.checked::before {
     background-image: url(img/checked.png);
 }
 
-ul li span{
+ul li span {
     position: absolute;
     right: 0;
     top: 5px;
@@ -106,6 +119,31 @@ ul li span{
     border-radius: 50%;
 }
 
-ul li span:hover{
+ul li span:hover {
     background: #edeef0;
 }
+
+h1 {
+    margin-top: -3%;
+    position: absolute;
+    background: linear-gradient(45deg, #08245e, #08245e, #36074d, #340341, #190866, #08245e);
+    background-size: 400% 100%;
+    font-family: 'Six Caps';
+    position: absolute;
+    font-size: 39vw;
+    transform: scaleY(1.3);
+    z-index: 0;
+
+    animation: degrade 30s linear infinite alternate;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes degrade {
+    0%{
+      background-position-x: 0%;
+    }
+    100%{
+      background-position-x: 400%;
+    }
+  }
